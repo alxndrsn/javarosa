@@ -77,21 +77,12 @@ public class PrefixTreeNode {
         return render(temp);
     }
 
-    public String render(StringBuilder sb) {
+    public String render(Appendable sb) {
         if (parent != null) {
             parent.render(sb);
         }
         sb.append(this.prefix);
         return sb.toString();
-    }
-
-    @Deprecated
-    public String render(StringBuffer buffer) {
-        if(parent != null){
-            parent.render(buffer);
-        }
-        buffer.append(this.prefix);
-        return buffer.toString();
     }
 
     public void seal() {
